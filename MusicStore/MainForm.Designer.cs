@@ -31,14 +31,15 @@ partial class MainForm
     {
         instrumentsflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
         actionsPanel = new System.Windows.Forms.Panel();
-        addButton = new System.Windows.Forms.Button();
-        undoButton = new System.Windows.Forms.Button();
         redoButton = new System.Windows.Forms.Button();
+        undoButton = new System.Windows.Forms.Button();
+        addButton = new System.Windows.Forms.Button();
         actionsPanel.SuspendLayout();
         SuspendLayout();
         // 
         // instrumentsflowLayoutPanel
         // 
+        instrumentsflowLayoutPanel.AutoScroll = true;
         instrumentsflowLayoutPanel.Location = new System.Drawing.Point(202, 94);
         instrumentsflowLayoutPanel.Name = "instrumentsflowLayoutPanel";
         instrumentsflowLayoutPanel.Size = new System.Drawing.Size(813, 554);
@@ -54,14 +55,15 @@ partial class MainForm
         actionsPanel.Size = new System.Drawing.Size(201, 554);
         actionsPanel.TabIndex = 1;
         // 
-        // addButton
+        // redoButton
         // 
-        addButton.Location = new System.Drawing.Point(26, 31);
-        addButton.Name = "addButton";
-        addButton.Size = new System.Drawing.Size(138, 57);
-        addButton.TabIndex = 0;
-        addButton.Text = "Add";
-        addButton.UseVisualStyleBackColor = true;
+        redoButton.Location = new System.Drawing.Point(32, 204);
+        redoButton.Name = "redoButton";
+        redoButton.Size = new System.Drawing.Size(130, 65);
+        redoButton.TabIndex = 2;
+        redoButton.Text = "Redo";
+        redoButton.UseVisualStyleBackColor = true;
+        redoButton.Click += redoButton_Click;
         // 
         // undoButton
         // 
@@ -71,15 +73,17 @@ partial class MainForm
         undoButton.TabIndex = 1;
         undoButton.Text = "Undo";
         undoButton.UseVisualStyleBackColor = true;
+        undoButton.Click += undoButton_Click;
         // 
-        // redoButton
+        // addButton
         // 
-        redoButton.Location = new System.Drawing.Point(32, 204);
-        redoButton.Name = "redoButton";
-        redoButton.Size = new System.Drawing.Size(130, 65);
-        redoButton.TabIndex = 2;
-        redoButton.Text = "Redo";
-        redoButton.UseVisualStyleBackColor = true;
+        addButton.Location = new System.Drawing.Point(26, 31);
+        addButton.Name = "addButton";
+        addButton.Size = new System.Drawing.Size(138, 57);
+        addButton.TabIndex = 0;
+        addButton.Text = "Add";
+        addButton.UseVisualStyleBackColor = true;
+        addButton.Click += addButton_Click;
         // 
         // MainForm
         // 
