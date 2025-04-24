@@ -1,6 +1,8 @@
+using MusicStore.Instruments.Visualization;
+
 namespace MusicStore.Instruments;
 
-public abstract class MusicalInstrument
+public abstract class MusicalInstrument : IVisulize
 {
     protected static uint count = 0;
     protected uint id;
