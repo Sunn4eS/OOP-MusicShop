@@ -1,6 +1,6 @@
 namespace MusicStore.Instruments.Pianos;
 
-public class Grand
+public class Grand : Piano
 {
     
 }

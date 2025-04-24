@@ -1,6 +1,6 @@
 namespace MusicStore.Instruments.Pianos;
 
-public class Piano
+public abstract class Piano : MusicalInstrument
 {
     
 }

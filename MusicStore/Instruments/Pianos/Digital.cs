@@ -1,6 +1,6 @@
 namespace MusicStore.Instruments.Pianos;
 
-public class Digital
+public class Digital : Piano
 {
     
 }

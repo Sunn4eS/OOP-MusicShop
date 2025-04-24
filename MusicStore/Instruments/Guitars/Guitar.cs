@@ -1,6 +1,8 @@
+using System.Diagnostics.Metrics;
+
 namespace MusicStore.Instruments.Guitars;
 
-public class Guitar
+public abstract class Guitar : MusicalInstrument
 {
     
 }

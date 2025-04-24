@@ -1,6 +1,6 @@
 namespace MusicStore.Instruments.Guitars;
 
-public class Ukulele
+public class Ukulele : Guitar
 {
     
 }

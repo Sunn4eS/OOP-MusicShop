@@ -1,6 +1,6 @@
 namespace MusicStore.Instruments.Guitars;
 
-public class Electric
+public class Electric : Guitar
 {
     
 }
