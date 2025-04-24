@@ -74,12 +74,19 @@ public abstract class MusicalInstrument : IVisulize
 
     private void EditMenuItem_Click(object? sender, EventArgs e)
     {
-        
+        new EditForm(this).ShowDialog();
+
     }
 
     private void DeleteMenuItem_Click(object? sender, EventArgs e)
     {
-        
+        Program.InstrumentsData?.RemoveInstrument(this);
+    }
+    public MusicalInstrument DeepCopy()
+    {
+        var copy = (MusicalInstrument)this.MemberwiseClone(); 
+        copy.Condition = new Condition(this.Condition!.Type);
+        return copy;
     }
 
 }

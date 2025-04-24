@@ -1,3 +1,5 @@
+using MusicStore.Instruments;
+
 namespace MusicStore;
 
 static class Program
@@ -5,6 +7,7 @@ static class Program
     /// <summary>
     ///  The main entry point for the application.
     /// </summary>
+    public static InstrumentsData? InstrumentsData;
     [STAThread]
     static void Main()
     {
