@@ -12,5 +12,11 @@ public class Grand : Piano
     {
         return base.ToString() + "; " + $"Count Of Pedals: {PedalCount}";
     }
+    public override Panel Visualize()
+    {
+        var table = base.Visualize();
+        ((PictureBox)table.Controls[0]).Image = Image.FromFile(Condition!.Type == ConditionTypes.FactoryNew ? "../../../Instruments/Images/FactoryNewGP.png" : Condition.Type == ConditionTypes.Used ? "../../../Instruments/Images/UsedGP.png" : "../../../Instruments/Images/DamagedGP.png");
+        return table;
+    }
     
 }

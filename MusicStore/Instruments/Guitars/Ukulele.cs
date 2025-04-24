@@ -27,5 +27,11 @@ public class Ukulele : Guitar
     {
         return base.ToString() +"; " + $" Ukulele: {TypeToString(TypeOfUkulele)}";
     }
+    public override Panel Visualize()
+    {
+        var table = base.Visualize();
+        ((PictureBox)table.Controls[0]).Image = Image.FromFile(Condition!.Type == ConditionTypes.FactoryNew ? "../../../Instruments/Images/FactoryNewUG.png" : Condition.Type == ConditionTypes.Used ? "../../../Instruments/Images/UsedUG.png" : "../../../Instruments/Images/DamagedUG.png");
+        return table;
+    }
     
 }

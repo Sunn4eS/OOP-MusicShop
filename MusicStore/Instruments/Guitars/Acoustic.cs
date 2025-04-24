@@ -13,4 +13,11 @@ public class Acoustic : Guitar
     {
         return base.ToString() + "; " + $"HousingType: {HousingType}";
     }
+
+    public override Panel Visualize()
+    {
+        var table = base.Visualize();
+        ((PictureBox)table.Controls[0]).Image = Image.FromFile(Condition!.Type == ConditionTypes.FactoryNew ? "../../../Instruments/Images/FactoryNewAG.png" : Condition.Type == ConditionTypes.Used ? "../../../Instruments/Images/UsedAG.png" : "../../../Instruments/Images/DamagedAG.png");
+        return table;
+    }
 }

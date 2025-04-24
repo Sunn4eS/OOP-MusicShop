@@ -15,4 +15,10 @@ public class MIDI : Piano
     {
         return base.ToString() + "; " + $"Count of Modes: {ModeCount}";
     }
+    public override Panel Visualize()
+    {
+        var table = base.Visualize();
+        ((PictureBox)table.Controls[0]).Image = Image.FromFile(Condition!.Type == ConditionTypes.FactoryNew ? "../../../Instruments/Images/FactoryNewMP.png" : Condition.Type == ConditionTypes.Used ? "../../../Instruments/Images/UsedMP.png" : "../../../Instruments/Images/DamagedMP.png");
+        return table;
+    }
 }

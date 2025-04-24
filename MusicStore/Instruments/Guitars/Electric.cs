@@ -13,5 +13,11 @@ public class Electric : Guitar
     {
         return base.ToString() + "; " + $"BridgeType: {BridgeType}";
     }
+    public override Panel Visualize()
+    {
+        var table = base.Visualize();
+        ((PictureBox)table.Controls[0]).Image = Image.FromFile(Condition!.Type == ConditionTypes.FactoryNew ? "../../../Instruments/Images/FactoryNewEG.png" : Condition.Type == ConditionTypes.Used ? "../../../Instruments/Images/UsedEG.png" : "../../../Instruments/Images/DamagedEG.png");
+        return table;
+    }
     
 }
