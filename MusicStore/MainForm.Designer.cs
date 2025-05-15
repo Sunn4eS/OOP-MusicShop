@@ -31,9 +31,11 @@ partial class MainForm
     {
         instrumentsflowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
         actionsPanel = new System.Windows.Forms.Panel();
+        importButton = new System.Windows.Forms.Button();
         redoButton = new System.Windows.Forms.Button();
         undoButton = new System.Windows.Forms.Button();
         addButton = new System.Windows.Forms.Button();
+        openFileDialogDll = new System.Windows.Forms.OpenFileDialog();
         actionsPanel.SuspendLayout();
         SuspendLayout();
         // 
@@ -47,6 +49,7 @@ partial class MainForm
         // 
         // actionsPanel
         // 
+        actionsPanel.Controls.Add(importButton);
         actionsPanel.Controls.Add(redoButton);
         actionsPanel.Controls.Add(undoButton);
         actionsPanel.Controls.Add(addButton);
@@ -54,6 +57,16 @@ partial class MainForm
         actionsPanel.Name = "actionsPanel";
         actionsPanel.Size = new System.Drawing.Size(201, 554);
         actionsPanel.TabIndex = 1;
+        // 
+        // importButton
+        // 
+        importButton.Location = new System.Drawing.Point(32, 301);
+        importButton.Name = "importButton";
+        importButton.Size = new System.Drawing.Size(132, 67);
+        importButton.TabIndex = 3;
+        importButton.Text = "Import class";
+        importButton.UseVisualStyleBackColor = true;
+        importButton.Click += importButton_Click;
         // 
         // redoButton
         // 
@@ -85,6 +98,10 @@ partial class MainForm
         addButton.UseVisualStyleBackColor = true;
         addButton.Click += addButton_Click;
         // 
+        // openFileDialogDll
+        // 
+        openFileDialogDll.Filter = "(*.dll)|*.dll";
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -96,6 +113,10 @@ partial class MainForm
         actionsPanel.ResumeLayout(false);
         ResumeLayout(false);
     }
+
+    private System.Windows.Forms.OpenFileDialog openFileDialogDll;
+
+    private System.Windows.Forms.Button importButton;
 
     private System.Windows.Forms.FlowLayoutPanel instrumentsflowLayoutPanel;
     private System.Windows.Forms.Panel actionsPanel;

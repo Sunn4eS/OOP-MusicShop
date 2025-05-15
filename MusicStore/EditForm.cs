@@ -91,8 +91,8 @@ public partial class EditForm : Form
             }
         }
 
-        Program.InstrumentsData!.UpdateView();
         Program.InstrumentsData.UpdateHistory();
+        Program.InstrumentsData!.UpdateView();
 
         this.Close();
     }

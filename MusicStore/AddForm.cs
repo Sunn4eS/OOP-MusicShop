@@ -95,12 +95,10 @@ public partial class AddForm : Form
             fields[i] = ((TextBox)fieldsflowLayoutPanel.Controls[i]).Text;
         }
 
-        System.Type instrumentCreatorType = instrumentsTypes.FirstOrDefault(t => t.FullName == $"MusicStore.Instruments.{instrumentTypeComboBox.SelectedItem}")!;
-
-        if (instrumentCreatorType != null )
-        {
-            Program.InstrumentsData!.AddInstrument((Activator.CreateInstance(instrumentCreatorType) as InstrumentCreator)!.CreateInst(fields));
-        }
+       // System.Type instrumentCreatorType = instrumentsTypes.FirstOrDefault(t => t.FullName == $"MusicStore.Instruments.{instrumentTypeComboBox.SelectedItem}")!;
+        Type instrumentCreatorType = instrumentsTypes
+            .FirstOrDefault(t => t.Name.Equals(instrumentTypeComboBox.SelectedItem.ToString(), StringComparison.OrdinalIgnoreCase));
+        Program.InstrumentsData!.AddInstrument((Activator.CreateInstance(instrumentCreatorType) as InstrumentCreator)!.CreateInst(fields));
 
         this.Close();
     }
