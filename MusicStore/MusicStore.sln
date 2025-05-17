@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore", "MusicStore.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drum", "..\Drum\Drum.csproj", "{040614BE-1D05-4130-BAC6-F1CA34946272}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encryption", "..\Encryption\Encryption.csproj", "{2F5BBB1B-1140-456F-88F7-EB3FC3AE4129}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{040614BE-1D05-4130-BAC6-F1CA34946272}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{040614BE-1D05-4130-BAC6-F1CA34946272}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{040614BE-1D05-4130-BAC6-F1CA34946272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5BBB1B-1140-456F-88F7-EB3FC3AE4129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5BBB1B-1140-456F-88F7-EB3FC3AE4129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5BBB1B-1140-456F-88F7-EB3FC3AE4129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5BBB1B-1140-456F-88F7-EB3FC3AE4129}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
