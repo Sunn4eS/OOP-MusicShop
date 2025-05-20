@@ -1,12 +1,17 @@
+using System.Runtime.Serialization;
+
 namespace MusicStore.Instruments;
 
+[DataContract]
 public class InstrumentsData
 {
+    [DataMember]
     public List<MusicalInstrument> InstrumentsList;
+    
     private readonly FlowLayoutPanel _flowLayoutPanel;
     private readonly List<List<MusicalInstrument>> _changeHistory;
     private int _index;
-
+    
     public MusicalInstrument this[int index]
     {
         get => InstrumentsList[index];

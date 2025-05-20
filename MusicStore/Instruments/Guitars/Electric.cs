@@ -1,7 +1,10 @@
-namespace MusicStore.Instruments.Guitars;
+using System.Runtime.Serialization;
 
+namespace MusicStore.Instruments.Guitars;
+[DataContract]
 public class Electric : Guitar
 {
+    [DataMember]
     public string? BridgeType { get; set; }
     public Electric(string brand, string model, uint price, ConditionTypes condition, uint countOfStrings, string bridgeType) : base(brand, model, price, condition, countOfStrings)
     {

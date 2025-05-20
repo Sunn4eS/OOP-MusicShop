@@ -1,9 +1,12 @@
 using System.Diagnostics.Metrics;
+using System.Runtime.Serialization;
 
 namespace MusicStore.Instruments.Pianos;
 
+[DataContract]
 public class MIDI : Piano
 {
+    [DataMember]
     public uint ModeCount { get; set; }
 
     public MIDI(string band, string model, uint price, ConditionTypes conditionTypes, uint keyCount, uint modeCount) : base(band, model, price, conditionTypes, keyCount)

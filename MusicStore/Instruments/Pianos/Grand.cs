@@ -1,7 +1,10 @@
-namespace MusicStore.Instruments.Pianos;
+using System.Runtime.Serialization;
 
+namespace MusicStore.Instruments.Pianos;
+[DataContract]
 public class Grand : Piano
 {
+    [DataMember]
     public uint PedalCount { get; set; }
     public Grand(string band, string model, uint price, ConditionTypes conditionTypes, uint keyCount, uint pedalCount) : base(band, model, price, conditionTypes, keyCount)
     { 

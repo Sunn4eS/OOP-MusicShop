@@ -1,14 +1,22 @@
+using System.Runtime.Serialization;
+
 namespace MusicStore.Instruments.Guitars;
+[DataContract]
 public enum UkuleleType
 {
+    [EnumMember]
     Soprano,
+    [EnumMember]
     Concert,
+    [EnumMember]
     Tenor, 
+    [EnumMember]
     Baritone
 }
+[DataContract]
 public class Ukulele : Guitar
 {
-    
+    [DataMember]
     public UkuleleType TypeOfUkulele { get; set; }
 
     public Ukulele(string brand, string model, uint price, ConditionTypes condition, uint stringsCount,

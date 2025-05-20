@@ -1,7 +1,10 @@
-namespace MusicStore.Instruments.Pianos;
+using System.Runtime.Serialization;
 
+namespace MusicStore.Instruments.Pianos;
+[DataContract]
 public class Digital : Piano
 {
+    [DataMember]
     public bool JackForHeadphones { get; set; }
     
     public Digital(string band, string model, uint price, ConditionTypes conditionTypes, uint keyCount, bool isJack) : base(band, model, price, conditionTypes, keyCount)

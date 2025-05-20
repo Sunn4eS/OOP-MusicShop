@@ -5,6 +5,6 @@ namespace MusicStore.Encrypt;
 public interface IPluginCipher
 {
     public void Encrypt(InstrumentsData instruments, FileStream fileStream, byte[] key);
-    //  public void Decrypt(InstrumentsData instruments, FileStream fileStream, byte[] key) { }
+    public InstrumentsData Decrypt(byte[] key, OpenFileDialog openFileDialog);
 
 }

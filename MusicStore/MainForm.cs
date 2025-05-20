@@ -39,7 +39,21 @@ public partial class MainForm : Form
 
     private void openToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        ;
+        string key = Microsoft.VisualBasic.Interaction.InputBox(
+            "Введите ключ:", 
+            "Ввод ключа", 
+            ""
+        );
+        // byte[] keyBytes = Encryption.BinaryStringToBytes(key);
+        byte[] keyBytes = key.Select(c => (byte)(c - '0')).ToArray();
+        InstrumentsData instruments = _cipherPlugin.Decrypt(keyBytes, openEncFileDialog);
+        Program.InstrumentsData.InstrumentsList = instruments.InstrumentsList;
+        Program.InstrumentsData.UpdateView();
+
+        
+
+
+
     }
     private IPluginCipher _cipherPlugin;
 
@@ -50,6 +64,7 @@ public partial class MainForm : Form
             "Ввод ключа", 
             ""
         );
+        
         // byte[] keyBytes = Encryption.BinaryStringToBytes(key);
         byte[] keyBytes = key.Select(c => (byte)(c - '0')).ToArray(); 
         if (saveEncFileDialog.ShowDialog() == DialogResult.OK)

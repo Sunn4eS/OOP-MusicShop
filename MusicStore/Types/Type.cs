@@ -1,4 +1,5 @@
 using System.Reflection;
+using MusicStore.Instruments;
 
 namespace MusicStore.Types;
     public static class Type
@@ -20,5 +21,11 @@ namespace MusicStore.Types;
                 })
                 .ToArray()!;
             return allTypes;
+        }
+        public static List<System.Type> GetKnownInstrumentTypes()
+        {
+            return GetTypes()
+                .Where(t => typeof(MusicalInstrument).IsAssignableFrom(t) && !t.IsAbstract)
+                .ToList();
         }
     }

@@ -1,7 +1,11 @@
+using System.Runtime.Serialization;
+
 namespace MusicStore.Instruments.Guitars;
 
+[DataContract]
 public class Acoustic : Guitar
 {
+    [DataMember]
     public string? HousingType { get; set; }
     public Acoustic(string brand, string model, uint price, ConditionTypes condition,uint countOfStrings, string housingType) : base(brand, model, price, condition, countOfStrings)
     {

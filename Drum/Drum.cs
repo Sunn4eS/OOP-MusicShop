@@ -1,7 +1,11 @@
-﻿namespace MusicStore.Instruments.Drum
+﻿using System.Runtime.Serialization;
+
+namespace MusicStore.Instruments.Drum
 {
+    [DataContract]
     public class Drum : MusicalInstrument
     {
+        [DataMember]
         public uint Size { get; set; }
 
         public Drum(string brand, string model, uint price, ConditionTypes condition, uint size) : base(brand, model,

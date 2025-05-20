@@ -1,15 +1,33 @@
+using System.Runtime.Serialization;
+using MusicStore.Instruments.Guitars;
+using MusicStore.Instruments.Pianos;
 using MusicStore.Instruments.Visualization;
 
 namespace MusicStore.Instruments;
 
+[DataContract]
+[KnownType(typeof(Guitar))]
+[KnownType(typeof(Electric))]
+[KnownType(typeof(Acoustic))]
+[KnownType(typeof(Ukulele))]
+
+[KnownType(typeof(Piano))]
+[KnownType(typeof(Digital))]
+[KnownType(typeof(MIDI))]
+[KnownType(typeof(Grand))]
 public abstract class MusicalInstrument : IVisulize
 {
     protected static uint count = 0;
+    [DataMember]
     protected uint id;
 
+    [DataMember]
     public string? Brand { get; set; }
+    [DataMember]
     public string? Model { get; set; }
+    [DataMember]
     public uint Price { get; set; }
+    [DataMember]
     public Condition? Condition { get; set; }
 
     public MusicalInstrument(string brand, string model, uint price, ConditionTypes condition)
